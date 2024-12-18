@@ -1,12 +1,11 @@
 
-<div class=" mx-auto md:px-24 pb-10 max-w-screen-xl">
+<div class=" mx-auto md:px-24 pb-10 max-w-screen-xl ">
     <div class="flex justify-center items-center pt-4 pb-10">
-        <h1 class="font-extrabold text-2xl">
+        <h1 class="font-extrabold text-gray-600 underline text-2xl">
             {{ session('lang') == 'en' ? 'Our Categories' : 'اصنافنا' }}
-            
         </h1>
      </div>
-    <div class="grid grid-cols-3 md:grid-cols-5  md:gap-4">
+    <div class="grid grid-cols-3 md:grid-cols-5  md:gap-4" >
         @foreach ($categories as $item)
         @if (!empty($item->image_url))
         <div class="items-center">

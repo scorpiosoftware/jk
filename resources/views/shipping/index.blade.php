@@ -109,7 +109,7 @@
                     City - State</label>
             </div>
             <div class="flex justify-start items-center">
-                <button onclick="myFunction()" type="button" class="bg-blue-700 px-2.5 rounded-lg text-center text-white">Add Your Email <span class="text-xl font-bold rounded-full">+</span></button>
+                <button onclick="myFunction()" type="button" class="bg-white px-2.5 rounded-lg text-center text-black border-2">Add Your Email <span class="text-xl font-bold rounded-full">+</span></button>
   
             </div>
             <div class=" pb-4">
@@ -131,7 +131,7 @@
             </div>
             <div class="md:flex md:justify-end">
                 <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Proceed</button>
+                    class="text-black bg-whiet border-2 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Proceed</button>
 
             </div>
 

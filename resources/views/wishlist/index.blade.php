@@ -25,7 +25,7 @@
                                         </div>
 
                                         <div class="text-end md:order-4 md:w-32">
-                                            <a href="{{ route('cart.add',$id) }}" class="text-base font-bold bg-green-300 p-2 rounded-md text-white hover:text-gray-900">
+                                            <a href="{{ route('cart.add',$id) }}" class="text-base font-bold bg-white p-2 rounded-md text-black border-2 hover:text-gray-900">
                                                Add to cart</a>
                                         </div>
                                         <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">

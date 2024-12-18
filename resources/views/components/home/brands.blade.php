@@ -1,6 +1,6 @@
-<div class="container px-12 md:px-24 mx-auto max-w-screen-xl">
+<div class="container px-12 md:px-24 mx-auto max-w-screen-xl shadow-lg p-2 rounded-md">
    <div class="flex justify-center items-center pb-4 gap-4">
-      <h1 class="font-bold text-3xl">
+      <h1 class="font-bold text-gray-600 underline text-3xl">
          @if (session('lang') == 'en')
          Our Brands
          @else

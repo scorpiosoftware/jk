@@ -16,28 +16,18 @@
                 d="m19 9-7 7-7-7" />
         </svg>
     </button>
-    {{-- <script>
-        $(document).ready(function() {
-            $("#myCartDropdownButton1").click(function() {
-                $.ajax({
-                    url: "{{ route('home') }}",
-                    type: "GET",
-                    success: function(response) {
-                        setTimeout(function() {
-
-                        }, 1000);
-                    }
-                });
-            });
-        });
-    </script> --}}
-
         <div id="myCartDropdown1"
             class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
             <livewire:cart-items>
-            <a href="{{ route('cart.show') }}" title=""
-                class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                @if (!empty(session('cart')))
+                <a href="{{ route('cart.show') }}" title=""
+                class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg  border-2 text-black  px-5 py-2.5 text-sm font-medium  focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 role="button"> Proceed to Checkout </a>
+                @else
+                <div><span>no items !</span></div>
+                <div><a href="{{route('filter.products')}}" class="text-sm border-2 rouded-md p-1 underline">continue shopping</a></div>
+                @endif
+
         </div>
 
 </div>

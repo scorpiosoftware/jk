@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Actions\Category\ListCategory;
+use App\Models\Carousel;
 use App\Models\Option;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -37,7 +38,8 @@ class OrderController extends Controller
     public function create()
     {
         $categories = ListCategory::execute();
-        return view('shipping.index', compact('categories'));
+        $carousel = Carousel::with('images')->first();
+        return view('shipping.index', compact('categories','carousel'));
     }
 
     /**
