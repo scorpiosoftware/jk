@@ -12,6 +12,7 @@ use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InboxController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -38,30 +39,7 @@ Route::get('/lang/{locale}',function(string $locale){
 
 Route::group(['prefix' => ''], function () {
     
-    Route::get('/', function () {
-        $locale = session()->get('lang');
-        // session()->put('lang',$locale);
-        if($locale == 'en'){
-            session()->forget('lang');
-            session()->put('lang','en');
-        }else if($locale == 'ar'){
-            session()->forget('lang');
-            session()->put('lang','ar');
-        }
-        else{
-            session()->forget('lang');
-            session()->put('lang','en');
-        }
-        $bestSeller = ListProductsByCategory::execute(1);
-        $hair_care = ListProductsByCategory::execute(2);
-        $body_care = ListProductsByCategory::execute(3);
-        $face_care = ListProductsByCategory::execute(4);
-        $sun_care = ListProductsByCategory::execute(5);
-        $categories = ListCategory::execute();
-        $brands = ListBrand::execute();
-        $carousel = Carousel::with('images')->first();
-        return view('welcome', compact('bestSeller','hair_care','body_care','face_care','sun_care', 'categories', 'brands','carousel'));
-    })->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::resource('shop', ShopController::class);
     Route::get('/show-cart/address', [OrderController::class, 'create'])->name('address');
     Route::resource('order', OrderController::class);

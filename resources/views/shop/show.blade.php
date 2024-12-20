@@ -89,7 +89,7 @@
                         {!! $record->price !!}</div>
                     <div class="text-bold text-black font-sans cursor-pointer text-lg">
                         @if ($record->status == 'in_stock')
-                            <span class=" text-lg px-2.5 rounded-md bg-green-200">{{ session('lang') == 'en' ? 'Available now' : 'متوفر في الوقت الحاضر'}}</span>
+                            <span class=" text-lg px-2.5 text-white rounded-md bg-gray-500">{{ session('lang') == 'en' ? 'Available now' : 'متوفر في الوقت الحاضر'}}</span>
                         @elseif ($record->status == 'out_of_stock')
                             <span class=" text-lg px-2.5 rounded-md bg-red-400">{{ session('lang') == 'en' ? 'Out of stock' : 'إنتهى من المخزن'}}</span>
                         @endif
@@ -100,7 +100,7 @@
 
                 <div class="flex justify-start items-center space-x-2 p-2">
                     @foreach ($record->categories as $category)
-                        <div class="p-2 rounded-lg shadow-md text-start text-sm cursor-default bg-gray-300">
+                        <div class="p-2 rounded-lg shadow-md text-start font-bold text-white text-sm cursor-default bg-gray-300">
                             {!! session('lang') == 'en' ? $category->name_en : $category->name_ar !!}</div>
                     @endforeach
 
@@ -110,7 +110,7 @@
                     <form action="{{ route('cart.add', $record->id) }}" method="GET">
                         @csrf
                         @method('GET')
-                        <div class="flex justify-between item-center">
+                        <div class="item-center space-y-4">
                             <div class="flex items-center border p-1 rounded-md">
 
                                 <div class="text-sm px-2">{{ session('lang') == 'en' ? 'quantity' : 'كمية'}}</div>
@@ -123,24 +123,11 @@
                                          @else
                                          value='1' @endif
                                          min="{!! $record->minimum_quantity !!}" max="{!! $record->maximum_quantity!!}" />
-
-                                {{-- <input type="range" min="{{ $record->minimum_quantity }}" max="{{ $record->maximum_quantity }}" name="qty"
-                                    @if (session('cart')) value=" {{ $cart[$record->id]['quantity'] }}"  
-                                @else
-                                    value='1' @endif
-                                    oninput="rangeValue.innerText = this.value">
-                                <p id="rangeValue">
-                                    @if (session('cart'))
-                                        {{ $cart[$record->id]['quantity'] }}
-                                    @else
-                                       1
-                                    @endif
-                                </p> --}}
                                 <div class="text-sm px-2">{{ session('lang') == 'en' ? 'maximum' : 'الحد الأقصى للكمية'}} : {{ $record->maximum_quantity }}</div>
                             </div>
                             <button type="submit"
-                                class="px-3 py-2 text-white transition-all delay-75 hover:text-black
-                                 hover:bg-red-700 bg-green-300 rounded-xl">
+                                class="px-3 py-2 w-1/2 mx-auto flex justify-center text-white transition-all delay-75
+                                 bg-green-300 rounded-xl">
                                 {{ session('lang') == 'en' ? 'Buy now' : 'اشتري الآن' }}</button>
                         </div>
 

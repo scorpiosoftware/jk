@@ -2,9 +2,8 @@
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="{{URL::to('media/logo/logo.jpeg')}}" class="flex items-center space-x-2">
-                  <img src="{{URL::to('media/logo/logo.jpeg')}}" class="w-32 me-3" alt="FlowBite Logo" />
-                  {{-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jamesia</span> --}}
+              <a href="{{URL::to('media/logo/logo.png')}}" class="flex items-center space-x-2">
+                  <img src="{{URL::to('media/logo/logo.png')}}" class="w-32 me-3" alt="FlowBite Logo" />
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
