@@ -23,6 +23,7 @@
     <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/css/product.css" rel="stylesheet">
+    <link href="/css/buyButton.css" rel="stylesheet">
     <link href="/css/stars.css" rel="stylesheet">
     <link href="/build/assets/app-Ca4a21vb.css" rel="stylesheet">
     <!-- Template Stylesheet -->

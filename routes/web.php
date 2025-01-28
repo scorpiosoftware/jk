@@ -46,8 +46,9 @@ Route::group(['prefix' => ''], function () {
     Route::post('/contactUs/send', [InboxController::class,'store'])->name('send-comment');
     Route::post('/shop/send', [ShopController::class,'addComment'])->name('add-review');
     Route::get('/contactUs',function(){
+        $carousel = Carousel::with('images')->first();
         $categories = ListCategory::execute();
-        return view('support.contact',compact('categories'));
+        return view('support.contact',compact('categories','carousel'));
     });
 });
 

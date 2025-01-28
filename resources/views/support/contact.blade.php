@@ -36,12 +36,80 @@
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Leave a comment..."></textarea>
                 </div>
+                <style>
+                    .buttonSend {
+                        font-family: inherit;
+                        font-size: 20px;
+                        background: royalblue;
+                        color: white;
+                        padding: 0.7em 1em;
+                        padding-left: 0.9em;
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        transition: all 0.2s;
+                        cursor: pointer;
+                    }
+
+                    button span {
+                        display: block;
+                        margin-left: 0.3em;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    button svg {
+                        display: block;
+                        transform-origin: center center;
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                    button:hover .svg-wrapper {
+                        animation: fly-1 0.6s ease-in-out infinite alternate;
+                    }
+
+                    button:hover svg {
+                        transform: translateX(1.2em) rotate(45deg) scale(1.1);
+                    }
+
+                    button:hover span {
+                        transform: translateX(5em);
+                    }
+
+                    button:active {
+                        transform: scale(0.95);
+                    }
+
+                    @keyframes fly-1 {
+                        from {
+                            transform: translateY(0.1em);
+                        }
+
+                        to {
+                            transform: translateY(-0.1em);
+                        }
+                    }
+                </style>
                 <div class="mt-2 flex justify-end">
-                    <button type="submit"
-                    class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-300 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
-                    message</button>
+                    {{-- <button type="submit"
+                        class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-300 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
+                        message</button> --}}
+                    <button class="buttonSend" type="submit">
+                        <div class="svg-wrapper-1">
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor"
+                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <span>Send</span>
+                    </button>
                 </div>
- 
+
             </form>
         </div>
     </section>

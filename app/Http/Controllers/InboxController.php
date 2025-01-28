@@ -6,6 +6,7 @@ use App\Actions\Inbox\DestroyInbox;
 use App\Actions\Inbox\GetInbox;
 use App\Actions\Inbox\ListInbox;
 use App\Actions\Inbox\StoreInbox;
+use App\Models\Carousel;
 use Illuminate\Http\Request;
 
 class InboxController extends Controller
@@ -24,7 +25,8 @@ class InboxController extends Controller
      */
     public function create()
     {
-        return view("support.contact");
+        $carousel = Carousel::with('images')->first();
+        return view("support.contact", compact("carousel"));
     }
 
     /**
